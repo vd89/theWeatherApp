@@ -4,25 +4,29 @@ let ui = new UI();
 let temp = document.getElementById('temp')
 
 let myChart = document.getElementById('myChart').getContext('2d')
-let lineChart = new Chart(myChart, {
-    type: 'bar',
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    }
-})
+const lineChart = (list) => {    
+    let lineChart = new Chart(myChart, {
+        type: 'line',
+        data: {
+            labels: list ,
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: list
+            }]
+        }
+    })
+}
 
 function findCity(e) {
   e.preventDefault();
   let cName = cityName.value;
   getForecast(cName)
       .then((res) => {
-        const { list, city } = res.data;
+          const { list, city } = res.data;
+        //   lineChart(list)
+          console.log(list);
         ui.showDetails(city);       
     })
     .catch((err) => {
