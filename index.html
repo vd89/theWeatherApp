@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Weather On Chart Using Chart.js</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <!-- <div class="container">
+        <h1>Chart JS</h1>
+        <canvas id="myChart"></canvas>
+    </div>     -->
+    <nav class="navbar navbar-dark bg-primary mb-3">
+        <div class="container">
+            <a href="" class="navbar-brand">City Weather chart</a>
+        </div>
+    </nav>
+    <div class="container searchContainer">
+        <div class="search card card-body ">
+            <h1>City Name to get Weather Chart</h1>
+            <p class="lead">Please provide the name of the city to get the weather</p>
+            <form id="submit" class="">
+                <input type="text" class="form-control" id="cityName" placeholder="City Name ......." />
+                <button class="btn btn-outline-primary form-control mt-2 " type="submit">Search</button>
+            </form>
+        </div>
+        <br>
+        <div id="cityDetail"></div>
+        <canvas id="myChart"></canvas>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+    integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+    integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="weather.js"></script>
+
+
+</html>
