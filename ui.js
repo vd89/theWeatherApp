@@ -1,6 +1,7 @@
 class UI {
   constructor() {
     this.cityDetail = document.getElementById('cityDetail');
+    this.myChart = document.getElementById('myChart').getContext('2d')
   }
 
   showDetails(city) {
@@ -38,5 +39,21 @@ class UI {
   }
   clearCityName() {
     this.cityDetail.innerHTML = '';
+  }
+
+  
+  showLineChart(list,city) {
+    let lineChart = new Chart(myChart, {
+      type: 'line',
+      data: {
+        labels: list,
+        datasets: [{
+          label: `The Temperature of ${city.name}`,
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: list
+        }]
+      }
+    })
   }
 }
