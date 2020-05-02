@@ -2,7 +2,7 @@ class UI {
   constructor() {
     this.cityDetail = document.getElementById('cityDetail');
     this.myChartLine = document.getElementById('myChartLine').getContext('2d');
-    this.minMaxChart = document.getElementById('minMaxChart').getContext('2d');
+
   }
 
   showDetails(city) {
@@ -40,6 +40,7 @@ class UI {
   }
   clearCityName() {
     this.cityDetail.innerHTML = '';
+    this.myChartLine.innerHTML=''
   }
   getKelToCel(temp) {
     const kelToCel = 273.15;
@@ -56,18 +57,28 @@ class UI {
             label: `The Temperature of ${city.name}`,
             backgroundColor: 'rgb(255, 99, 132)',
             data: list,
+            order:1
           },
           {
             label: `The Temperature of ${city.name}`,
             data: list,
-            borderColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgba(54, 162, 235, 1)',
             type: 'line',
+            order:2
           },
+         
         ],
       },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
     });
   }
-  showMixChart(min, max, city, dt) {
-    let mixChart = new Chart(minMaxChart, {});
-  }
+  
 }
