@@ -15,7 +15,7 @@ function findCity(e) {
       const dt = list.map((i) => i.dt_txt.split(' '));
       setTimeout(() => {
         ui.showLineChart(temp, city, dt);
-      }, 1500);
+      }, 500);
     });
   } else {
       ui.clearCityName()
