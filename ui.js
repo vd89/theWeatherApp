@@ -1,7 +1,8 @@
 class UI {
   constructor() {
     this.cityDetail = document.getElementById('cityDetail');
-    this.myChart = document.getElementById('myChart').getContext('2d')
+    this.myChartLine = document.getElementById('myChartLine').getContext('2d');
+    this.minMaxChart = document.getElementById('minMaxChart').getContext('2d');
   }
 
   showDetails(city) {
@@ -40,20 +41,33 @@ class UI {
   clearCityName() {
     this.cityDetail.innerHTML = '';
   }
-
-  
-  showLineChart(list,city) {
-    let lineChart = new Chart(myChart, {
-      type: 'line',
+  getKelToCel(temp) {
+    const kelToCel = 273.15;
+    const temInCal = temp - kelToCel;
+    return temInCal.toFixed(2);
+  }
+  showLineChart(list, city, dt) {
+    let lineChart = new Chart(myChartLine, {
+      type: 'bar',
       data: {
-        labels: list,
-        datasets: [{
-          label: `The Temperature of ${city.name}`,
-          backgroundColor: 'rgb(255, 99, 132)',
-          borderColor: 'rgb(255, 99, 132)',
-          data: list
-        }]
-      }
-    })
+        labels: dt,
+        datasets: [
+          {
+            label: `The Temperature of ${city.name}`,
+            backgroundColor: 'rgb(255, 99, 132)',
+            data: list,
+          },
+          {
+            label: `The Temperature of ${city.name}`,
+            data: list,
+            borderColor: 'rgb(255, 99, 132)',
+            type: 'line',
+          },
+        ],
+      },
+    });
+  }
+  showMixChart(min, max, city, dt) {
+    let mixChart = new Chart(minMaxChart, {});
   }
 }
