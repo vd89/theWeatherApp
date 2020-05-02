@@ -10,7 +10,7 @@ class Weather {
         return res.data;
       })
       .catch((err) => {
-        throw err;
+        ui.showAlert("Please provide a valid City",'alert alert-danger')
       });
     const getForecast = weatherResponse;
     return {

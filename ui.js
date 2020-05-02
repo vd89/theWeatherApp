@@ -29,7 +29,7 @@ class UI {
     container.insertBefore(div, search);
 
     setTimeout(() => {
-      this.clearAlert();
+      this.clearAlert();      
     }, 3000);
   }
   clearAlert() {
@@ -40,7 +40,7 @@ class UI {
   }
   clearCityName() {
     this.cityDetail.innerHTML = '';
-    this.myChartLine.innerHTML=''
+    this.myChartLine.innerHTML= ''
   }
   getKelToCel(temp) {
     const kelToCel = 273.15;
